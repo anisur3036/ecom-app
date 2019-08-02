@@ -36,18 +36,4 @@ class CategoryTest extends TestCase
 
     	$this->assertEquals(1, Category::parents()->count());
     }
-
-
-    public function test_it_is_oderable_by_a_numbered_order()
-    {
-    	$category1 = factory(Category::class)->create([
-    		'order' => 2
-    	]);
-
-    	$category2 = factory(Category::class)->create([
-    		'order' => 1
-    	]);
-
-    	$this->assertEquals($category2->name, Category::ordered()->first()->name);
-    }
 }
